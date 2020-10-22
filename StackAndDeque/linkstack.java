@@ -56,6 +56,25 @@ public class linkstack{
         }
         System.out.println();
     }
+    /**
+     * 通过出栈顺序遍历.
+     * 
+     */
+    public void PopBianli(){
+        int i=0;
+        if(this.TOP==null)
+            return;
+        while(this.TOP!=null){
+            System.out.println("第"+(++i)+"次出栈的值为: "+this.Pop().data);
+        }
+        
+        /*
+        while(this.TOP!=this.BOTTOM){
+            System.out.println("第"+(++i)+"次出栈的值为: "+this.Pop().data);
+        }
+        System.out.println("第"+(++i)+"次出栈的值为: "+this.Pop().data);
+        */
+    }
     public static void main(String[] args) {
         linkstack stack=new linkstack();
         stack.Push(1);
@@ -71,5 +90,6 @@ public class linkstack{
         stack.Bianli();
         stack.Push(100);
         stack.Bianli();
+        stack.PopBianli();
     }
 }
