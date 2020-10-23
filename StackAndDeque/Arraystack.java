@@ -6,6 +6,7 @@ class ANode {
     int data;
 }
 
+//top，bottom指向某个数组内的元素，本程序!=index
 // 栈顶指向数组最后一名元素
 // STACK[0]不存储元素
 public class Arraystack {
