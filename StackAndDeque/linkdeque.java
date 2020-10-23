@@ -11,48 +11,43 @@ public class linkdeque{
     Node REAR;  //队尾
     int LEN=0; //记录队长
     public linkdeque(){
-        this.FRONT=null;
-        this.REAR=null;
+        //初始化一个头节点--头节点不存储元素
+        //队头指针永远指向该空的头节点
+        //队尾指针永远指向队列最后一个结点
+        this.FRONT=this.REAR=new Node();
     }
     public Node Enqueue(int value){
-        if(this.FRONT==this.REAR){
-            Node current=new Node(value);
-            this.FRONT=current;
-           // this.FRONT.next=null;
-            this.REAR=current.next;
-            this.LEN++;
-            System.out.println("队长为: "+this.LEN);
-            return this.FRONT;
-        }else{
-            Node current=new Node(value);
-            this.REAR=current;
-            this.REAR=current.next;
-            this.LEN++;
-            System.out.println("队长为: "+this.LEN);
-            return current;
-        }
+        Node current=new Node(value);
+        this.REAR.next=current;
+        this.REAR=current;
+
+        this.LEN++;
+        System.out.println("队长为: "+this.LEN);
+
+        return this.REAR;
     }
     public Node dequeue(){
         if(this.FRONT==this.REAR)
-            return null;
-        Node temp=this.FRONT;
-        Node current=temp;
-        temp=temp.next;
-        this.FRONT=temp;
-        this.LEN--;
+            System.out.println("队列已空!");
+        Node current=this.FRONT.next;
+        this.FRONT.next=current.next;
+        this.FRONT=current;
         return current;
     }
+
+    //以普通方式遍历链队
     public void Bianli(){
         if(this.FRONT==this.REAR)
             return ;
-        Node temp=this.FRONT;
-        System.out.println(temp.data);
-       // while(temp.next!=this.REAR)
-        for(int i=1;i<=5;i++){
-            temp=temp.next;
-            System.out.println(temp.data);
-        }   
+        int i=0;
+        Node current=this.FRONT;
+        while(current!=this.REAR){
+            current=current.next;
+            System.out.print("第"+(++i)+"次出列的元素为: "+current.data);
+        }
+        System.out.println();
     }
+
     public static void main(String[] args) {
         //linkstack m=new linkstack();
         linkdeque m=new linkdeque();
