@@ -1,7 +1,5 @@
 package StackAndDeque;
 
-import java.util.ArrayList;
-
 class ANode {
     int data;
 }
@@ -49,8 +47,7 @@ public class Arraystack {
     }
 
     public Boolean isEmpty() {
-        Boolean Empty;
-        return Empty = LEN == 0 ? true : false;
+        return  LEN == 0 ? true : false;
     }
 
     // 以清空顺序栈的方式遍历整个顺序栈

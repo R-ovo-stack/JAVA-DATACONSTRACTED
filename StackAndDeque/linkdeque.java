@@ -1,5 +1,4 @@
 package StackAndDeque;
-import StackAndDeque.Node;
 
 /**
  * 顺序队列中，队头指向队列第一个元素

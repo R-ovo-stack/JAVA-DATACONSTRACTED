@@ -5,7 +5,6 @@ package StackAndDeque;
  */
 class ANode2 {
     int data;
-
     public ANode2(int value) {
         this.data = value;
     }
@@ -53,8 +52,7 @@ public class ArrayDeque {
     }
 
     public Boolean isEmpty() {
-        Boolean is;
-        return is = this.front == this.rear ? true : false;
+        return this.front == this.rear ? true : false;
     }
 
     //以出队方式遍历，遍历完成，队列已空
