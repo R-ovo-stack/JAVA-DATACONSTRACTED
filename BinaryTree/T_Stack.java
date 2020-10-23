@@ -1,30 +1,36 @@
-package StackAndDeque;
+package BinaryTree;
 
-class Node{
-    int data;
-    Node next;
-    public Node(){}
-    public Node(int value){
-        this.data=value;
+/**
+ * 写了一段垃圾代码.....
+ * 待修改，明天整几个接口改改
+ */
+public class T_Stack {
+
+    class Node<T>{
+        T data;   //
+        Node<T> next;
+        public Node(){}
+        public Node(T value){
+            this.data=value;
+        }
     }
-}
-
-public class linkstack{
-    protected Node TOP; //栈顶 -->元素此进此出
-    protected Node BOTTOM; //栈底
+    
+    protected Node<BNode> TOP; //栈顶 -->元素此进此出
+    protected Node<BNode> BOTTOM; //栈底
     protected int LEN=0;  //记录栈的深度
-
-    public linkstack(){
+    public T_Stack(){
         this.BOTTOM=this.TOP=null;
     }
+
     /**
      * 
      * @param value  压入数字链栈的数值
      * @return
      */
-    public Node Push(int value){
+
+    public Node<BNode> Push(T value){
         if(this.TOP==null){
-            Node current=new Node(value);
+            Node<BNode> current=new Node(value);
             this.BOTTOM=this.TOP=current;
             current.next=null;
             return current;
@@ -34,23 +40,25 @@ public class linkstack{
              * 在遍历的时候，会遍历两次栈底BOTTOM
              */
         }
-        Node current=new Node(value);
+        Node<BNode> current=new Node(value);
         current.next=this.TOP;
         this.TOP=current;        
         return this.TOP;
     }
-    public Node Pop(){
+
+    public Node<BNode> Pop(){
         if(this.TOP==null)
             return null;
-        Node current=this.TOP;
+        Node<BNode> current=this.TOP;
         this.TOP=current.next;
         return current;
     }
+/*
     //遍历链栈
     public void Bianli(){
         if(this.TOP==null)
             return;
-        Node temp=this.TOP;
+        Node<BNode> temp=this.TOP;
         System.out.print(temp.data+"  ");
         while(temp!=this.BOTTOM){
             temp=temp.next;
@@ -58,10 +66,12 @@ public class linkstack{
         }
         System.out.println();
     }
+*/
     /**
      * 通过出栈顺序遍历.
      * 
      */
+    /*
     public void PopBianli(){
         int i=0;
         if(this.TOP==null)
@@ -69,29 +79,15 @@ public class linkstack{
         while(this.TOP!=null){
             System.out.println("第"+(++i)+"次出栈的值为: "+this.Pop().data);
         }
-        
-        /*
-        while(this.TOP!=this.BOTTOM){
-            System.out.println("第"+(++i)+"次出栈的值为: "+this.Pop().data);
-        }
-        System.out.println("第"+(++i)+"次出栈的值为: "+this.Pop().data);
-        */
     }
+*/
     public static void main(String[] args) {
-        linkstack stack=new linkstack();
-        stack.Push(1);
-        stack.Push(2);
-        stack.Push(3);
-        stack.Push(4);
-        stack.Push(5);
-        stack.Push(6);
-        stack.Push(7);
-        stack.Bianli();
+        T_Stack stack=new T_Stack();
+        BNode k=new BNode(1);
+        stack.Push(k);
         stack.Pop();
         stack.Pop();
-        stack.Bianli();
         stack.Push(100);
-        stack.Bianli();
-        stack.PopBianli();
+
     }
 }
