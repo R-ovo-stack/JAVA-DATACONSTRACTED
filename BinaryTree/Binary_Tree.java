@@ -17,15 +17,9 @@ class BNode {
         this.left = null;
         this.right = null;
     }
-
-
-
 }
-
 // 二叉链表实现
 public class Binary_Tree {
-
-    
     public static int i = 0;
     public static Scanner cin = new Scanner(System.in);
 
@@ -39,11 +33,9 @@ public class Binary_Tree {
         CreateBinaryTree(root.left);
         CreateBinaryTree(root.right);
     }
-
     public static void OFF() {
         i = 0;
     }
-
     public static void PreOrder(BNode root) {
         if (root == null)
             return;

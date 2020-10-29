@@ -28,7 +28,7 @@ public class T_Stack {
      * @return
      */
 
-    public Node<BNode> Push(T value){
+    public Node<BNode> Push(Node value){
         if(this.TOP==null){
             Node<BNode> current=new Node(value);
             this.BOTTOM=this.TOP=current;
@@ -81,6 +81,7 @@ public class T_Stack {
         }
     }
 */
+/*
     public static void main(String[] args) {
         T_Stack stack=new T_Stack();
         BNode k=new BNode(1);
@@ -88,6 +89,6 @@ public class T_Stack {
         stack.Pop();
         stack.Pop();
         stack.Push(100);
-
     }
+    */
 }
